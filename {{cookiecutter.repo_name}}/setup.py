@@ -120,6 +120,7 @@ setup(name='{{ cookiecutter.project_name }}',
       test_suite='tests',
       setup_requires=['pytest-runner'],
       tests_require=tests_require,
+      {# This breaks for me, so commenting it out. 
       cmdclass={
         {%- if cookiecutter.use_tox == "Yes" %}
         'test': ToxTestCommand,
@@ -128,5 +129,5 @@ setup(name='{{ cookiecutter.project_name }}',
         'sdist': command_factory('SDistCommand', sdist, compile_translations),
         'bdist_wheel': command_factory('BDistWheelCommand', bdist_wheel, compile_translations),
         {%- endif %}
-    }
+    }#}
 )
